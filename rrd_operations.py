@@ -9,7 +9,7 @@
     
     TODO: 
         Change functions with input to object with controling functions and 'working' functions
-        Add 
+        Add full folder tree scaning
 """
 import os
 import json
@@ -113,6 +113,7 @@ def import_rrd(x):
             print("Actual file: {} # Precent of lofder {}% {}\n".format(elem.split('/')[1].split('.')[0]+'.rrd', round(((ind)/len(elems['files']))*100, 2), test))
             file.close()
             os.remove(tmpExportPlc+'/'+elem)
+        os.remove(tmpExportPlc+'/'+elems['dirName'])
 
 def error_function(x):
     print('bad operation')
